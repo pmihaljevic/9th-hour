@@ -45,17 +45,17 @@ import { Clock9, ArrowRight, Shield, Target, Zap, Users, CheckCircle2, XCircle, 
     <!-- 1. Hero Section -->
     <section class="pt-40 pb-24 md:pt-60 md:pb-40 px-6">
       <div class="max-w-4xl mx-auto">
-        <h1 class="text-5xl md:text-7xl font-bold text-white tracking-tight leading-[1.1] mb-8">
+        <h1 class="hero-title text-5xl md:text-7xl font-bold text-white tracking-tight leading-[1.1] mb-8">
           The product is built. <br />
           <span class="text-zinc-500 italic">Now it needs to work.</span>
         </h1>
-        <div class="grid md:grid-cols-2 gap-12">
+        <div class="hero-subtitle grid md:grid-cols-2 gap-12">
           <div>
             <p class="text-xl md:text-2xl text-zinc-400 font-medium leading-relaxed">
               Temporary technical and product ownership for B2B software teams.
             </p>
           </div>
-          <div>
+          <div class="hero-cta">
             <p class="text-lg text-zinc-500 leading-relaxed">
               9th Hour is a personal studio for founders and teams who have successfully launched, but have lost the ability to move with confidence. I step in to resolve technical debt, clarify priorities, and restore a culture of predictable delivery.
             </p>
@@ -81,25 +81,25 @@ import { Clock9, ArrowRight, Shield, Target, Zap, Users, CheckCircle2, XCircle, 
           </p>
 
           <div class="grid sm:grid-cols-2 gap-8">
-            <div class="flex gap-4 items-start p-6 bg-white/5 rounded-xl border border-white/5">
+            <div class="reveal reveal-subtle stagger-1 card-hover flex gap-4 items-start p-6 bg-white/5 rounded-xl border border-white/5">
               <div class="mt-1 flex-shrink-0 w-2 h-2 rounded-full bg-zinc-600"></div>
               <p class="text-zinc-300">Features take longer to ship than they used to.</p>
             </div>
-            <div class="flex gap-4 items-start p-6 bg-white/5 rounded-xl border border-white/5">
+            <div class="reveal reveal-subtle stagger-2 card-hover flex gap-4 items-start p-6 bg-white/5 rounded-xl border border-white/5">
               <div class="mt-1 flex-shrink-0 w-2 h-2 rounded-full bg-zinc-600"></div>
               <p class="text-zinc-300">The roadmap is a collection of guesses rather than a strategy.</p>
             </div>
-            <div class="flex gap-4 items-start p-6 bg-white/5 rounded-xl border border-white/5">
+            <div class="reveal reveal-subtle stagger-3 card-hover flex gap-4 items-start p-6 bg-white/5 rounded-xl border border-white/5">
               <div class="mt-1 flex-shrink-0 w-2 h-2 rounded-full bg-zinc-600"></div>
               <p class="text-zinc-300">Decision fatigue is slowing down the founders and the engineering team.</p>
             </div>
-            <div class="flex gap-4 items-start p-6 bg-white/5 rounded-xl border border-white/5">
+            <div class="reveal reveal-subtle stagger-4 card-hover flex gap-4 items-start p-6 bg-white/5 rounded-xl border border-white/5">
               <div class="mt-1 flex-shrink-0 w-2 h-2 rounded-full bg-zinc-600"></div>
               <p class="text-zinc-300">The introduction of AI or new modules feels aimless and reactionary.</p>
             </div>
           </div>
 
-          <div class="mt-16 p-8 border-l-2 border-zinc-700 italic">
+          <div class="reveal mt-16 p-8 border-l-2 border-zinc-700 italic">
             <p class="text-2xl text-zinc-300">
               "You don't need more developers. You need a clear path and the authority to take it."
             </p>
@@ -118,8 +118,8 @@ import { Clock9, ArrowRight, Shield, Target, Zap, Users, CheckCircle2, XCircle, 
         </p>
 
         <div class="grid gap-px bg-white/10 overflow-hidden border border-white/10 rounded-2xl">
-          <div class="bg-[#0a0a0a] p-8 flex flex-col md:flex-row md:items-center gap-6 group hover:bg-zinc-900 transition-colors">
-            <div class="w-12 h-12 flex items-center justify-center bg-zinc-800 rounded-lg text-zinc-400 group-hover:text-white transition-colors">
+          <div class="reveal stagger-1 bg-[#0a0a0a] p-8 flex flex-col md:flex-row md:items-center gap-6 group hover:bg-zinc-900 transition-colors">
+            <div class="icon-hover w-12 h-12 flex items-center justify-center bg-zinc-800 rounded-lg text-zinc-400 group-hover:text-white transition-colors">
               <Shield />
             </div>
             <div>
@@ -127,8 +127,8 @@ import { Clock9, ArrowRight, Shield, Target, Zap, Users, CheckCircle2, XCircle, 
               <p class="text-zinc-500 group-hover:text-zinc-400 transition-colors">Implement the discipline required to turn 'messy' into 'maintainable.'</p>
             </div>
           </div>
-          <div class="bg-[#0a0a0a] p-8 flex flex-col md:flex-row md:items-center gap-6 group hover:bg-zinc-900 transition-colors">
-            <div class="w-12 h-12 flex items-center justify-center bg-zinc-800 rounded-lg text-zinc-400 group-hover:text-white transition-colors">
+          <div class="reveal stagger-2 bg-[#0a0a0a] p-8 flex flex-col md:flex-row md:items-center gap-6 group hover:bg-zinc-900 transition-colors">
+            <div class="icon-hover w-12 h-12 flex items-center justify-center bg-zinc-800 rounded-lg text-zinc-400 group-hover:text-white transition-colors">
               <Target />
             </div>
             <div>
@@ -136,8 +136,8 @@ import { Clock9, ArrowRight, Shield, Target, Zap, Users, CheckCircle2, XCircle, 
               <p class="text-zinc-500 group-hover:text-zinc-400 transition-colors">Remove the bottleneck of uncertainty by making technical and product trade-offs with confidence.</p>
             </div>
           </div>
-          <div class="bg-[#0a0a0a] p-8 flex flex-col md:flex-row md:items-center gap-6 group hover:bg-zinc-900 transition-colors">
-            <div class="w-12 h-12 flex items-center justify-center bg-zinc-800 rounded-lg text-zinc-400 group-hover:text-white transition-colors">
+          <div class="reveal stagger-3 bg-[#0a0a0a] p-8 flex flex-col md:flex-row md:items-center gap-6 group hover:bg-zinc-900 transition-colors">
+            <div class="icon-hover w-12 h-12 flex items-center justify-center bg-zinc-800 rounded-lg text-zinc-400 group-hover:text-white transition-colors">
               <Zap />
             </div>
             <div>
@@ -145,8 +145,8 @@ import { Clock9, ArrowRight, Shield, Target, Zap, Users, CheckCircle2, XCircle, 
               <p class="text-zinc-500 group-hover:text-zinc-400 transition-colors">Replace the anxiety of the unknown with a steady, predictable rhythm of shipping.</p>
             </div>
           </div>
-          <div class="bg-[#0a0a0a] p-8 flex flex-col md:flex-row md:items-center gap-6 group hover:bg-zinc-900 transition-colors">
-            <div class="w-12 h-12 flex items-center justify-center bg-zinc-800 rounded-lg text-zinc-400 group-hover:text-white transition-colors">
+          <div class="reveal stagger-4 bg-[#0a0a0a] p-8 flex flex-col md:flex-row md:items-center gap-6 group hover:bg-zinc-900 transition-colors">
+            <div class="icon-hover w-12 h-12 flex items-center justify-center bg-zinc-800 rounded-lg text-zinc-400 group-hover:text-white transition-colors">
               <Users />
             </div>
             <div>
@@ -166,7 +166,7 @@ import { Clock9, ArrowRight, Shield, Target, Zap, Users, CheckCircle2, XCircle, 
 
         <div class="space-y-12 relative before:absolute before:left-8 before:top-0 before:bottom-0 before:w-px before:bg-white/10 md:before:left-1/2 md:before:-translate-x-px">
           <!-- Step 01 -->
-          <div class="relative flex items-center gap-12 md:justify-between md:flex-row">
+          <div class="reveal stagger-1 relative flex items-center gap-12 md:justify-between md:flex-row">
             <div class="absolute left-[31px] md:left-1/2 md:-translate-x-1/2 w-3 h-3 bg-zinc-800 border border-zinc-600 rounded-full z-10"></div>
             <div class="pl-16 md:pl-0 md:w-[45%]">
               <div class="flex items-center gap-4 mb-2">
@@ -178,7 +178,7 @@ import { Clock9, ArrowRight, Shield, Target, Zap, Users, CheckCircle2, XCircle, 
             <div class="hidden md:block md:w-[45%]"></div>
           </div>
           <!-- Step 02 -->
-          <div class="relative flex items-center gap-12 md:justify-between md:flex-row-reverse">
+          <div class="reveal stagger-2 relative flex items-center gap-12 md:justify-between md:flex-row-reverse">
             <div class="absolute left-[31px] md:left-1/2 md:-translate-x-1/2 w-3 h-3 bg-zinc-800 border border-zinc-600 rounded-full z-10"></div>
             <div class="pl-16 md:pl-0 md:w-[45%]">
               <div class="flex items-center gap-4 mb-2">
@@ -190,7 +190,7 @@ import { Clock9, ArrowRight, Shield, Target, Zap, Users, CheckCircle2, XCircle, 
             <div class="hidden md:block md:w-[45%]"></div>
           </div>
           <!-- Step 03 -->
-          <div class="relative flex items-center gap-12 md:justify-between md:flex-row">
+          <div class="reveal stagger-3 relative flex items-center gap-12 md:justify-between md:flex-row">
             <div class="absolute left-[31px] md:left-1/2 md:-translate-x-1/2 w-3 h-3 bg-zinc-800 border border-zinc-600 rounded-full z-10"></div>
             <div class="pl-16 md:pl-0 md:w-[45%]">
               <div class="flex items-center gap-4 mb-2">
@@ -202,7 +202,7 @@ import { Clock9, ArrowRight, Shield, Target, Zap, Users, CheckCircle2, XCircle, 
             <div class="hidden md:block md:w-[45%]"></div>
           </div>
           <!-- Step 04 -->
-          <div class="relative flex items-center gap-12 md:justify-between md:flex-row-reverse">
+          <div class="reveal stagger-4 relative flex items-center gap-12 md:justify-between md:flex-row-reverse">
             <div class="absolute left-[31px] md:left-1/2 md:-translate-x-1/2 w-3 h-3 bg-zinc-800 border border-zinc-600 rounded-full z-10"></div>
             <div class="pl-16 md:pl-0 md:w-[45%]">
               <div class="flex items-center gap-4 mb-2">
@@ -220,7 +220,7 @@ import { Clock9, ArrowRight, Shield, Target, Zap, Users, CheckCircle2, XCircle, 
     <!-- 5. What 9th Hour Is / Is Not -->
     <section class="py-24 md:py-40 px-6 border-t border-white/5">
       <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-12">
-        <div>
+        <div class="reveal stagger-1">
           <h3 class="text-2xl font-bold text-white mb-8 flex items-center gap-3">
             <CheckCircle2 class="text-emerald-500" /> 9th Hour Is
           </h3>
@@ -231,7 +231,7 @@ import { Clock9, ArrowRight, Shield, Target, Zap, Users, CheckCircle2, XCircle, 
             <li class="text-zinc-400 pb-4 border-b border-white/5">Direct, honest, and decisive.</li>
           </ul>
         </div>
-        <div>
+        <div class="reveal stagger-2">
           <h3 class="text-2xl font-bold text-white mb-8 flex items-center gap-3">
             <XCircle class="text-rose-500" /> 9th Hour Is Not
           </h3>
@@ -255,19 +255,19 @@ import { Clock9, ArrowRight, Shield, Target, Zap, Users, CheckCircle2, XCircle, 
         </p>
 
         <div class="grid sm:grid-cols-2 gap-px bg-black/10">
-          <div class="bg-white p-8 flex items-start gap-4">
+          <div class="reveal reveal-subtle stagger-1 bg-white p-8 flex items-start gap-4">
             <div class="w-1.5 h-1.5 rounded-full bg-black mt-2.5 flex-shrink-0"></div>
             <p class="text-lg font-medium text-zinc-900">Your product has an established user base and revenue.</p>
           </div>
-          <div class="bg-white p-8 flex items-start gap-4">
+          <div class="reveal reveal-subtle stagger-2 bg-white p-8 flex items-start gap-4">
             <div class="w-1.5 h-1.5 rounded-full bg-black mt-2.5 flex-shrink-0"></div>
             <p class="text-lg font-medium text-zinc-900">The technical foundation feels fragile or overwhelming.</p>
           </div>
-          <div class="bg-white p-8 flex items-start gap-4">
+          <div class="reveal reveal-subtle stagger-3 bg-white p-8 flex items-start gap-4">
             <div class="w-1.5 h-1.5 rounded-full bg-black mt-2.5 flex-shrink-0"></div>
             <p class="text-lg font-medium text-zinc-900">You feel like you are losing the 'big picture' to daily fires.</p>
           </div>
-          <div class="bg-white p-8 flex items-start gap-4">
+          <div class="reveal reveal-subtle stagger-4 bg-white p-8 flex items-start gap-4">
             <div class="w-1.5 h-1.5 rounded-full bg-black mt-2.5 flex-shrink-0"></div>
             <p class="text-lg font-medium text-zinc-900">You value professional maturity over temporary hype.</p>
           </div>
@@ -279,12 +279,12 @@ import { Clock9, ArrowRight, Shield, Target, Zap, Users, CheckCircle2, XCircle, 
     <section id="about" class="py-24 md:py-40 px-6 border-t border-white/5">
       <div class="max-w-4xl mx-auto">
         <div class="flex flex-col md:flex-row gap-16 items-start">
-          <div class="flex-shrink-0">
+          <div class="reveal flex-shrink-0">
             <div class="w-24 h-24 rounded-2xl bg-gradient-to-br from-zinc-700 to-zinc-900 flex items-center justify-center border border-white/10 overflow-hidden shadow-2xl">
               <Clock9 class="w-12 h-12 text-zinc-500" />
             </div>
           </div>
-          <div>
+          <div class="reveal stagger-2">
             <span class="text-xs uppercase tracking-[0.2em] text-zinc-500 font-bold mb-4 block">The Principal</span>
             <h2 class="text-4xl md:text-5xl font-bold text-white mb-8 tracking-tight">A discipline of delivery.</h2>
             <div class="prose prose-invert prose-lg text-zinc-400 space-y-6">
@@ -303,11 +303,11 @@ import { Clock9, ArrowRight, Shield, Target, Zap, Users, CheckCircle2, XCircle, 
     <!-- 8. Call to Action -->
     <section id="cta" class="py-24 md:py-40 px-6 bg-[#111] border-t border-white/5">
       <div class="max-w-4xl mx-auto text-center">
-        <h2 class="text-4xl md:text-6xl font-bold text-white mb-8 tracking-tighter">Start a conversation.</h2>
-        <p class="text-xl text-zinc-400 mb-12 max-w-2xl mx-auto leading-relaxed">
+        <h2 class="reveal text-4xl md:text-6xl font-bold text-white mb-8 tracking-tighter">Start a conversation.</h2>
+        <p class="reveal stagger-2 text-xl text-zinc-400 mb-12 max-w-2xl mx-auto leading-relaxed">
           If your product development no longer feels under your control, let's discuss the current state of your project. No sales pitch, just a professional evaluation of whether I can help you regain your momentum.
         </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <div class="reveal stagger-3 flex flex-col sm:flex-row gap-4 justify-center items-center">
           <button class="bg-white text-black px-10 py-4 rounded-full text-lg font-bold hover:bg-zinc-200 transition-all flex items-center gap-2 group">
             Inquire about availability <ArrowRight class="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </button>
@@ -397,5 +397,20 @@ import { Clock9, ArrowRight, Shield, Target, Zap, Users, CheckCircle2, XCircle, 
         }
       });
     });
+
+    // 4. Scroll-triggered reveal animations
+    const revealElements = document.querySelectorAll('.reveal, .reveal-subtle');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.15,
+      rootMargin: '0px 0px -50px 0px'
+    });
+    revealElements.forEach(el => revealObserver.observe(el));
   </script>
 </Layout>
