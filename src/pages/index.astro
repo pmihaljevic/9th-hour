@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import '../styles/global.css';
-import { Clock9, ArrowRight, Shield, Target, Zap, Users, CheckCircle2, XCircle, Menu, X, Sun, Moon } from '@lucide/astro';
+import { Clock9, ArrowRight, Users, CheckCircle2, XCircle, Menu, X, Sun, Moon, LifeBuoy, ArrowRightLeft, Wrench, UserPlus, Stethoscope, Hammer } from '@lucide/astro';
 ---
 
 <Layout>
@@ -18,7 +18,7 @@ import { Clock9, ArrowRight, Shield, Target, Zap, Users, CheckCircle2, XCircle, 
       <!-- Desktop Nav -->
       <div class="hidden md:flex items-center gap-8">
         <button data-scroll-to="problem" class="text-sm font-medium text-gray-600 hover:text-gray-900 dark:text-zinc-400 dark:hover:text-white transition-colors">The Problem</button>
-        <button data-scroll-to="solution" class="text-sm font-medium text-gray-600 hover:text-gray-900 dark:text-zinc-400 dark:hover:text-white transition-colors">What I Do</button>
+        <button data-scroll-to="engagement" class="text-sm font-medium text-gray-600 hover:text-gray-900 dark:text-zinc-400 dark:hover:text-white transition-colors">How I Work</button>
         <button data-scroll-to="process" class="text-sm font-medium text-gray-600 hover:text-gray-900 dark:text-zinc-400 dark:hover:text-white transition-colors">Process</button>
         <button data-scroll-to="about" class="text-sm font-medium text-gray-600 hover:text-gray-900 dark:text-zinc-400 dark:hover:text-white transition-colors">About</button>
         <button id="theme-toggle-desktop" class="p-2 rounded-lg bg-gray-100 dark:bg-zinc-800 text-gray-600 dark:text-zinc-400 hover:bg-gray-200 dark:hover:bg-zinc-700 transition-colors" aria-label="Toggle theme">
@@ -38,7 +38,7 @@ import { Clock9, ArrowRight, Shield, Target, Zap, Users, CheckCircle2, XCircle, 
     <!-- Mobile Nav Overlay -->
     <div id="mobile-menu" class="fixed inset-0 bg-white dark:bg-black z-40 flex-col items-center justify-center gap-8 text-2xl hidden text-gray-900 dark:text-white">
       <button data-scroll-to="problem" class="font-light">The Problem</button>
-      <button data-scroll-to="solution" class="font-light">What I Do</button>
+      <button data-scroll-to="engagement" class="font-light">How I Work</button>
       <button data-scroll-to="process" class="font-light">Process</button>
       <button data-scroll-to="about" class="font-light">About</button>
       <button id="theme-toggle-mobile" class="p-3 rounded-full bg-gray-100 dark:bg-zinc-800 text-gray-600 dark:text-zinc-400" aria-label="Toggle theme">
@@ -57,23 +57,16 @@ import { Clock9, ArrowRight, Shield, Target, Zap, Users, CheckCircle2, XCircle, 
           The product is built. <br />
           <span class="text-gray-500 dark:text-zinc-500 italic">Now it needs to work.</span>
         </h1>
-        <div class="hero-subtitle grid md:grid-cols-2 gap-12">
-          <div>
-            <p class="text-xl md:text-2xl text-gray-600 dark:text-zinc-400 font-medium leading-relaxed">
-              Temporary technical and product ownership for B2B software teams.
-            </p>
-          </div>
-          <div class="hero-cta">
-            <p class="text-lg text-gray-500 dark:text-zinc-500 leading-relaxed">
-              9th Hour is a personal studio for founders and teams who have successfully launched, but have lost the ability to move with confidence. I step in to resolve technical debt, clarify priorities, and restore a culture of predictable delivery.
-            </p>
-            <button
-              data-scroll-to="problem"
-              class="mt-8 flex items-center gap-2 text-gray-900 dark:text-white font-semibold group border-b border-gray-300 dark:border-white/20 pb-1 hover:border-gray-900 dark:hover:border-white transition-all"
-            >
-              Read the mission <ArrowRight class="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </button>
-          </div>
+        <div class="hero-subtitle max-w-3xl">
+          <p class="text-xl md:text-2xl text-gray-600 dark:text-zinc-400 font-medium leading-relaxed mb-8">
+            A senior engineer who embeds into your team, takes ownership of what's broken, and delivers the fix. Code, process, and momentum — in 3 to 6 months.
+          </p>
+          <button
+            data-scroll-to="problem"
+            class="hero-cta flex items-center gap-2 text-gray-900 dark:text-white font-semibold group border-b border-gray-300 dark:border-white/20 pb-1 hover:border-gray-900 dark:hover:border-white transition-all"
+          >
+            Read the mission <ArrowRight class="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </button>
         </div>
       </div>
     </section>
@@ -95,7 +88,7 @@ import { Clock9, ArrowRight, Shield, Target, Zap, Users, CheckCircle2, XCircle, 
             </div>
             <div class="reveal reveal-subtle stagger-2 card-hover flex gap-4 items-start p-6 bg-gray-100 dark:bg-white/5 rounded-xl border border-gray-200 dark:border-white/5">
               <div class="mt-1 flex-shrink-0 w-2 h-2 rounded-full bg-gray-400 dark:bg-zinc-600"></div>
-              <p class="text-gray-700 dark:text-zinc-300">The roadmap is a collection of guesses rather than a strategy.</p>
+              <p class="text-gray-700 dark:text-zinc-300">Your best developer left and took all the context with them.</p>
             </div>
             <div class="reveal reveal-subtle stagger-3 card-hover flex gap-4 items-start p-6 bg-gray-100 dark:bg-white/5 rounded-xl border border-gray-200 dark:border-white/5">
               <div class="mt-1 flex-shrink-0 w-2 h-2 rounded-full bg-gray-400 dark:bg-zinc-600"></div>
@@ -103,70 +96,244 @@ import { Clock9, ArrowRight, Shield, Target, Zap, Users, CheckCircle2, XCircle, 
             </div>
             <div class="reveal reveal-subtle stagger-4 card-hover flex gap-4 items-start p-6 bg-gray-100 dark:bg-white/5 rounded-xl border border-gray-200 dark:border-white/5">
               <div class="mt-1 flex-shrink-0 w-2 h-2 rounded-full bg-gray-400 dark:bg-zinc-600"></div>
-              <p class="text-gray-700 dark:text-zinc-300">The introduction of AI or new modules feels aimless and reactionary.</p>
+              <p class="text-gray-700 dark:text-zinc-300">A critical feature or migration has stalled and nobody wants to own it.</p>
             </div>
           </div>
 
           <div class="reveal mt-16 p-8 border-l-2 border-gray-300 dark:border-zinc-700 italic">
             <p class="text-2xl text-gray-700 dark:text-zinc-300">
-              "You don't need more developers. You need a clear path and the authority to take it."
+              "You don't need more developers. You need one who will own the outcome."
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 3. What 9th Hour Does -->
-    <section id="solution" class="py-24 md:py-40 px-6 border-t border-gray-200 dark:border-white/5">
+    <!-- 3. Engagement Types -->
+    <section id="engagement" class="py-24 md:py-40 px-6 border-t border-gray-200 dark:border-white/5">
       <div class="max-w-4xl mx-auto">
-        <span class="text-xs uppercase tracking-[0.2em] text-gray-500 dark:text-zinc-500 font-bold mb-4 block">The Role</span>
-        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-8 tracking-tight">Temporary ownership, permanent clarity.</h2>
+        <span class="text-xs uppercase tracking-[0.2em] text-gray-500 dark:text-zinc-500 font-bold mb-4 block">What I Do</span>
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-8 tracking-tight">I join your team. I own the problem. I fix it.</h2>
         <p class="text-xl text-gray-600 dark:text-zinc-400 mb-16 leading-relaxed">
-          I do not act as an advisor or a consultant who leaves you with a document. I act as a temporary technical and product owner. I take responsibility for the difficult decisions that have been deferred.
+          Every engagement starts with a specific problem. Here are the four most common situations where I step in.
         </p>
 
         <div class="grid gap-px bg-gray-200 dark:bg-white/10 overflow-hidden border border-gray-200 dark:border-white/10 rounded-2xl">
           <div class="reveal stagger-1 bg-white dark:bg-[#0a0a0a] p-8 flex flex-col md:flex-row md:items-center gap-6 group hover:bg-gray-50 dark:hover:bg-zinc-900 transition-colors">
             <div class="icon-hover w-12 h-12 flex items-center justify-center bg-gray-100 dark:bg-zinc-800 rounded-lg text-gray-500 dark:text-zinc-400 group-hover:text-gray-900 dark:group-hover:text-white transition-colors">
-              <Shield />
+              <LifeBuoy />
             </div>
             <div>
-              <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-1">Establish Structure</h3>
-              <p class="text-gray-500 dark:text-zinc-500 group-hover:text-gray-600 dark:group-hover:text-zinc-400 transition-colors">Implement the discipline required to turn 'messy' into 'maintainable.'</p>
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-1">The Rescue</h3>
+              <p class="text-gray-500 dark:text-zinc-500 group-hover:text-gray-600 dark:group-hover:text-zinc-400 transition-colors">A critical project has stalled or gone sideways. I diagnose the root cause and lead delivery to completion.</p>
             </div>
           </div>
           <div class="reveal stagger-2 bg-white dark:bg-[#0a0a0a] p-8 flex flex-col md:flex-row md:items-center gap-6 group hover:bg-gray-50 dark:hover:bg-zinc-900 transition-colors">
             <div class="icon-hover w-12 h-12 flex items-center justify-center bg-gray-100 dark:bg-zinc-800 rounded-lg text-gray-500 dark:text-zinc-400 group-hover:text-gray-900 dark:group-hover:text-white transition-colors">
-              <Target />
+              <ArrowRightLeft />
             </div>
             <div>
-              <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-1">Drive Decisions</h3>
-              <p class="text-gray-500 dark:text-zinc-500 group-hover:text-gray-600 dark:group-hover:text-zinc-400 transition-colors">Remove the bottleneck of uncertainty by making technical and product trade-offs with confidence.</p>
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-1">The Migration</h3>
+              <p class="text-gray-500 dark:text-zinc-500 group-hover:text-gray-600 dark:group-hover:text-zinc-400 transition-colors">A major technical change is needed. I plan it, execute it, and make sure nothing breaks.</p>
             </div>
           </div>
           <div class="reveal stagger-3 bg-white dark:bg-[#0a0a0a] p-8 flex flex-col md:flex-row md:items-center gap-6 group hover:bg-gray-50 dark:hover:bg-zinc-900 transition-colors">
             <div class="icon-hover w-12 h-12 flex items-center justify-center bg-gray-100 dark:bg-zinc-800 rounded-lg text-gray-500 dark:text-zinc-400 group-hover:text-gray-900 dark:group-hover:text-white transition-colors">
-              <Zap />
+              <Wrench />
             </div>
             <div>
-              <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-1">Restore Calm</h3>
-              <p class="text-gray-500 dark:text-zinc-500 group-hover:text-gray-600 dark:group-hover:text-zinc-400 transition-colors">Replace the anxiety of the unknown with a steady, predictable rhythm of shipping.</p>
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-1">The Cleanup</h3>
+              <p class="text-gray-500 dark:text-zinc-500 group-hover:text-gray-600 dark:group-hover:text-zinc-400 transition-colors">The codebase has accumulated shortcuts and fragile deployments. I systematically address the tech debt that's slowing you down.</p>
             </div>
           </div>
           <div class="reveal stagger-4 bg-white dark:bg-[#0a0a0a] p-8 flex flex-col md:flex-row md:items-center gap-6 group hover:bg-gray-50 dark:hover:bg-zinc-900 transition-colors">
             <div class="icon-hover w-12 h-12 flex items-center justify-center bg-gray-100 dark:bg-zinc-800 rounded-lg text-gray-500 dark:text-zinc-400 group-hover:text-gray-900 dark:group-hover:text-white transition-colors">
-              <Users />
+              <UserPlus />
             </div>
             <div>
-              <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-1">Bridge the Gap</h3>
-              <p class="text-gray-500 dark:text-zinc-500 group-hover:text-gray-600 dark:group-hover:text-zinc-400 transition-colors">Align the business goals of the founders with the technical realities of the code.</p>
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-1">The Gap</h3>
+              <p class="text-gray-500 dark:text-zinc-500 group-hover:text-gray-600 dark:group-hover:text-zinc-400 transition-colors">Your senior developer or tech lead left. I fill the role and maintain momentum while you find a permanent replacement.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 4. The Process -->
+    <!-- 4. How It Works -->
+    <section id="how-it-works" class="py-24 md:py-40 px-6 border-t border-gray-200 dark:border-white/5 bg-gray-50 dark:bg-[#0d0d0d]">
+      <div class="max-w-5xl mx-auto">
+        <span class="text-xs uppercase tracking-[0.2em] text-gray-500 dark:text-zinc-500 font-bold mb-4 block">How It Works</span>
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-16 tracking-tight">Three ways to work together.</h2>
+
+        <div class="grid gap-8">
+          <!-- Format 1: The Diagnosis -->
+          <div class="reveal stagger-1 bg-white dark:bg-[#0a0a0a] rounded-2xl border border-gray-200 dark:border-white/10 overflow-hidden">
+            <div class="p-8 md:p-10">
+              <div class="flex items-center gap-4 mb-4">
+                <div class="w-10 h-10 flex items-center justify-center bg-gray-100 dark:bg-zinc-800 rounded-lg text-gray-500 dark:text-zinc-400">
+                  <Stethoscope />
+                </div>
+                <span class="text-xs font-mono text-gray-400 dark:text-zinc-600 uppercase tracking-wider">Format 1</span>
+              </div>
+              <h3 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-3">The Diagnosis</h3>
+              <p class="text-lg text-gray-600 dark:text-zinc-400 mb-8 leading-relaxed">
+                Before we fix anything, we need to understand exactly what's broken and what it's costing you.
+              </p>
+
+              <div class="grid sm:grid-cols-2 gap-4 mb-8">
+                <div class="flex items-start gap-3">
+                  <CheckCircle2 class="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
+                  <span class="text-gray-600 dark:text-zinc-400 text-sm">Full codebase review</span>
+                </div>
+                <div class="flex items-start gap-3">
+                  <CheckCircle2 class="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
+                  <span class="text-gray-600 dark:text-zinc-400 text-sm">Team workflow assessment</span>
+                </div>
+                <div class="flex items-start gap-3">
+                  <CheckCircle2 class="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
+                  <span class="text-gray-600 dark:text-zinc-400 text-sm">Written Diagnosis Report with prioritized action plan</span>
+                </div>
+                <div class="flex items-start gap-3">
+                  <CheckCircle2 class="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
+                  <span class="text-gray-600 dark:text-zinc-400 text-sm">90-minute video walkthrough</span>
+                </div>
+                <div class="flex items-start gap-3">
+                  <CheckCircle2 class="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
+                  <span class="text-gray-600 dark:text-zinc-400 text-sm">Architecture diagram</span>
+                </div>
+                <div class="flex items-start gap-3">
+                  <CheckCircle2 class="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
+                  <span class="text-gray-600 dark:text-zinc-400 text-sm">Risk assessment</span>
+                </div>
+                <div class="flex items-start gap-3">
+                  <CheckCircle2 class="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
+                  <span class="text-gray-600 dark:text-zinc-400 text-sm">Honest recommendation on next steps</span>
+                </div>
+              </div>
+
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-6 border-t border-gray-200 dark:border-white/10">
+                <span class="text-sm font-medium text-gray-500 dark:text-zinc-500">1 week. Fixed scope.</span>
+                <button data-scroll-to="cta" class="text-sm font-semibold text-gray-900 dark:text-white flex items-center gap-2 group">
+                  Not sure where to start? Start here. <ArrowRight class="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Format 2: The Fix -->
+          <div class="reveal stagger-2 bg-white dark:bg-[#0a0a0a] rounded-2xl border border-gray-200 dark:border-white/10 overflow-hidden">
+            <div class="p-8 md:p-10">
+              <div class="flex items-center gap-4 mb-4">
+                <div class="w-10 h-10 flex items-center justify-center bg-gray-100 dark:bg-zinc-800 rounded-lg text-gray-500 dark:text-zinc-400">
+                  <Hammer />
+                </div>
+                <span class="text-xs font-mono text-gray-400 dark:text-zinc-600 uppercase tracking-wider">Format 2</span>
+              </div>
+              <h3 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-3">The Fix</h3>
+              <p class="text-lg text-gray-600 dark:text-zinc-400 mb-8 leading-relaxed">
+                I take ownership of a defined problem and eliminate it.
+              </p>
+
+              <div class="grid sm:grid-cols-2 gap-4 mb-8">
+                <div class="flex items-start gap-3">
+                  <CheckCircle2 class="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
+                  <span class="text-gray-600 dark:text-zinc-400 text-sm">Embedded in your team — standups, Slack, PR reviews</span>
+                </div>
+                <div class="flex items-start gap-3">
+                  <CheckCircle2 class="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
+                  <span class="text-gray-600 dark:text-zinc-400 text-sm">Own one defined outcome</span>
+                </div>
+                <div class="flex items-start gap-3">
+                  <CheckCircle2 class="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
+                  <span class="text-gray-600 dark:text-zinc-400 text-sm">Hands-on: I write code, review code, refactor code</span>
+                </div>
+                <div class="flex items-start gap-3">
+                  <CheckCircle2 class="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
+                  <span class="text-gray-600 dark:text-zinc-400 text-sm">Weekly written progress updates</span>
+                </div>
+                <div class="flex items-start gap-3">
+                  <CheckCircle2 class="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
+                  <span class="text-gray-600 dark:text-zinc-400 text-sm">Knowledge transfer and documentation</span>
+                </div>
+                <div class="flex items-start gap-3">
+                  <CheckCircle2 class="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
+                  <span class="text-gray-600 dark:text-zinc-400 text-sm">CI/CD and testing improvements included</span>
+                </div>
+                <div class="flex items-start gap-3">
+                  <CheckCircle2 class="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
+                  <span class="text-gray-600 dark:text-zinc-400 text-sm">2 weeks async post-engagement support</span>
+                </div>
+              </div>
+
+              <div class="pt-6 border-t border-gray-200 dark:border-white/10">
+                <span class="text-sm font-medium text-gray-500 dark:text-zinc-500">Typically 6–12 weeks. Scoped to your specific problem.</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Format 3: The Embedded Senior -->
+          <div class="reveal stagger-3 bg-white dark:bg-[#0a0a0a] rounded-2xl border border-gray-200 dark:border-white/10 overflow-hidden">
+            <div class="p-8 md:p-10">
+              <div class="flex items-center gap-4 mb-4">
+                <div class="w-10 h-10 flex items-center justify-center bg-gray-100 dark:bg-zinc-800 rounded-lg text-gray-500 dark:text-zinc-400">
+                  <Users />
+                </div>
+                <span class="text-xs font-mono text-gray-400 dark:text-zinc-600 uppercase tracking-wider">Format 3</span>
+              </div>
+              <h3 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-3">The Embedded Senior</h3>
+              <p class="text-lg text-gray-600 dark:text-zinc-400 mb-8 leading-relaxed">
+                I become your team's technical backbone for as long as you need.
+              </p>
+
+              <div class="grid sm:grid-cols-2 gap-4 mb-8">
+                <div class="flex items-start gap-3">
+                  <CheckCircle2 class="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
+                  <span class="text-gray-600 dark:text-zinc-400 text-sm">Full team integration as senior tech lead</span>
+                </div>
+                <div class="flex items-start gap-3">
+                  <CheckCircle2 class="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
+                  <span class="text-gray-600 dark:text-zinc-400 text-sm">Own multiple workstreams</span>
+                </div>
+                <div class="flex items-start gap-3">
+                  <CheckCircle2 class="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
+                  <span class="text-gray-600 dark:text-zinc-400 text-sm">Lead sprint planning and architecture decisions</span>
+                </div>
+                <div class="flex items-start gap-3">
+                  <CheckCircle2 class="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
+                  <span class="text-gray-600 dark:text-zinc-400 text-sm">Mentor junior and mid-level developers</span>
+                </div>
+                <div class="flex items-start gap-3">
+                  <CheckCircle2 class="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
+                  <span class="text-gray-600 dark:text-zinc-400 text-sm">Technical counterpart to founder/CTO</span>
+                </div>
+                <div class="flex items-start gap-3">
+                  <CheckCircle2 class="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
+                  <span class="text-gray-600 dark:text-zinc-400 text-sm">Hiring support: job descriptions, screening, interviews</span>
+                </div>
+                <div class="flex items-start gap-3">
+                  <CheckCircle2 class="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
+                  <span class="text-gray-600 dark:text-zinc-400 text-sm">Technical strategy document (12–18 month roadmap)</span>
+                </div>
+                <div class="flex items-start gap-3">
+                  <CheckCircle2 class="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
+                  <span class="text-gray-600 dark:text-zinc-400 text-sm">30 days async post-engagement support</span>
+                </div>
+                <div class="flex items-start gap-3">
+                  <CheckCircle2 class="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
+                  <span class="text-gray-600 dark:text-zinc-400 text-sm">Written team assessment</span>
+                </div>
+              </div>
+
+              <div class="pt-6 border-t border-gray-200 dark:border-white/10">
+                <span class="text-sm font-medium text-gray-500 dark:text-zinc-500">3–6 months. Full integration.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. The Process -->
     <section id="process" class="py-24 md:py-40 px-6 border-t border-gray-200 dark:border-white/5 bg-gray-50 dark:bg-[#0d0d0d]">
       <div class="max-w-4xl mx-auto">
         <span class="text-xs uppercase tracking-[0.2em] text-gray-500 dark:text-zinc-500 font-bold mb-4 block">The Roadmap</span>
@@ -179,9 +346,9 @@ import { Clock9, ArrowRight, Shield, Target, Zap, Users, CheckCircle2, XCircle, 
             <div class="pl-16 md:pl-0 md:w-[45%]">
               <div class="flex items-center gap-4 mb-2">
                 <span class="text-xs font-mono text-gray-400 dark:text-zinc-600">01</span>
-                <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Clarity</h3>
+                <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Assess</h3>
               </div>
-              <p class="text-gray-500 dark:text-zinc-500 leading-relaxed">An immediate audit of the current technical state, team dynamics, and product bottlenecks. We identify exactly why progress has slowed.</p>
+              <p class="text-gray-500 dark:text-zinc-500 leading-relaxed">I review the codebase, talk to the team, and identify exactly what's blocking progress. You get an honest written assessment within the first week.</p>
             </div>
             <div class="hidden md:block md:w-[45%]"></div>
           </div>
@@ -191,9 +358,9 @@ import { Clock9, ArrowRight, Shield, Target, Zap, Users, CheckCircle2, XCircle, 
             <div class="pl-16 md:pl-0 md:w-[45%]">
               <div class="flex items-center gap-4 mb-2">
                 <span class="text-xs font-mono text-gray-400 dark:text-zinc-600">02</span>
-                <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Direction</h3>
+                <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Scope</h3>
               </div>
-              <p class="text-gray-500 dark:text-zinc-500 leading-relaxed">We define a focused roadmap. We stop doing the things that don't matter and commit to the few things that do.</p>
+              <p class="text-gray-500 dark:text-zinc-500 leading-relaxed">We agree on the scope: what I'm here to fix, what success looks like, and the timeline. No ambiguity.</p>
             </div>
             <div class="hidden md:block md:w-[45%]"></div>
           </div>
@@ -203,9 +370,9 @@ import { Clock9, ArrowRight, Shield, Target, Zap, Users, CheckCircle2, XCircle, 
             <div class="pl-16 md:pl-0 md:w-[45%]">
               <div class="flex items-center gap-4 mb-2">
                 <span class="text-xs font-mono text-gray-400 dark:text-zinc-600">03</span>
-                <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Delivery</h3>
+                <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Deliver</h3>
               </div>
-              <p class="text-gray-500 dark:text-zinc-500 leading-relaxed">I lead the team through the execution phase, resolving technical debt and shipping critical updates to prove the new rhythm works.</p>
+              <p class="text-gray-500 dark:text-zinc-500 leading-relaxed">I work alongside your team — writing code, reviewing PRs, making the hard calls — until the problem is resolved.</p>
             </div>
             <div class="hidden md:block md:w-[45%]"></div>
           </div>
@@ -217,7 +384,7 @@ import { Clock9, ArrowRight, Shield, Target, Zap, Users, CheckCircle2, XCircle, 
                 <span class="text-xs font-mono text-gray-400 dark:text-zinc-600">04</span>
                 <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Handover</h3>
               </div>
-              <p class="text-gray-500 dark:text-zinc-500 leading-relaxed">Once the product is stable and the team is aligned, I prepare the environment for your long-term technical leadership and step away.</p>
+              <p class="text-gray-500 dark:text-zinc-500 leading-relaxed">I document everything, transfer knowledge to the team, and make sure the fix sticks after I leave.</p>
             </div>
             <div class="hidden md:block md:w-[45%]"></div>
           </div>
@@ -233,9 +400,9 @@ import { Clock9, ArrowRight, Shield, Target, Zap, Users, CheckCircle2, XCircle, 
             <CheckCircle2 class="text-emerald-500" /> 9th Hour Is
           </h3>
           <ul class="space-y-4">
-            <li class="text-gray-600 dark:text-zinc-400 pb-4 border-b border-gray-200 dark:border-white/5">One senior engineer taking full responsibility.</li>
-            <li class="text-gray-600 dark:text-zinc-400 pb-4 border-b border-gray-200 dark:border-white/5">A temporary intervention (3–9 months).</li>
-            <li class="text-gray-600 dark:text-zinc-400 pb-4 border-b border-gray-200 dark:border-white/5">Focused on discipline and craftsmanship.</li>
+            <li class="text-gray-600 dark:text-zinc-400 pb-4 border-b border-gray-200 dark:border-white/5">One senior engineer who takes ownership of the outcome.</li>
+            <li class="text-gray-600 dark:text-zinc-400 pb-4 border-b border-gray-200 dark:border-white/5">A temporary engagement (3–6 months).</li>
+            <li class="text-gray-600 dark:text-zinc-400 pb-4 border-b border-gray-200 dark:border-white/5">Hands-on. I write code, review code, and lead by doing.</li>
             <li class="text-gray-600 dark:text-zinc-400 pb-4 border-b border-gray-200 dark:border-white/5">Direct, honest, and decisive.</li>
           </ul>
         </div>
@@ -259,7 +426,7 @@ import { Clock9, ArrowRight, Shield, Target, Zap, Users, CheckCircle2, XCircle, 
         <span class="text-xs uppercase tracking-[0.2em] text-gray-500 dark:text-zinc-500 font-bold mb-4 block">The Ideal Match</span>
         <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-8 tracking-tight">For products with real complexity.</h2>
         <p class="text-xl text-gray-600 dark:text-zinc-400 mb-12">
-          This studio is designed for B2B founders and product owners who manage teams of 5 to 20 people.
+          9th Hour is designed for B2B founders and CTOs with engineering teams of 3 to 15 people.
         </p>
 
         <div class="grid sm:grid-cols-2 gap-px bg-gray-200 dark:bg-white/10">
@@ -269,7 +436,7 @@ import { Clock9, ArrowRight, Shield, Target, Zap, Users, CheckCircle2, XCircle, 
           </div>
           <div class="reveal reveal-subtle stagger-2 bg-white dark:bg-[#0d0d0d] p-8 flex items-start gap-4">
             <div class="w-1.5 h-1.5 rounded-full bg-gray-900 dark:bg-white mt-2.5 flex-shrink-0"></div>
-            <p class="text-lg font-medium text-gray-900 dark:text-zinc-100">The technical foundation feels fragile or overwhelming.</p>
+            <p class="text-lg font-medium text-gray-900 dark:text-zinc-100">A specific technical problem is blocking your progress and nobody on the team can own it.</p>
           </div>
           <div class="reveal reveal-subtle stagger-3 bg-white dark:bg-[#0d0d0d] p-8 flex items-start gap-4">
             <div class="w-1.5 h-1.5 rounded-full bg-gray-900 dark:bg-white mt-2.5 flex-shrink-0"></div>
@@ -277,7 +444,7 @@ import { Clock9, ArrowRight, Shield, Target, Zap, Users, CheckCircle2, XCircle, 
           </div>
           <div class="reveal reveal-subtle stagger-4 bg-white dark:bg-[#0d0d0d] p-8 flex items-start gap-4">
             <div class="w-1.5 h-1.5 rounded-full bg-gray-900 dark:bg-white mt-2.5 flex-shrink-0"></div>
-            <p class="text-lg font-medium text-gray-900 dark:text-zinc-100">You value professional maturity over temporary hype.</p>
+            <p class="text-lg font-medium text-gray-900 dark:text-zinc-100">You're looking for someone who will take responsibility for a result — not bill hours and wait for instructions.</p>
           </div>
         </div>
       </div>
@@ -293,14 +460,17 @@ import { Clock9, ArrowRight, Shield, Target, Zap, Users, CheckCircle2, XCircle, 
             </div>
           </div>
           <div class="reveal stagger-2">
-            <span class="text-xs uppercase tracking-[0.2em] text-gray-500 dark:text-zinc-500 font-bold mb-4 block">The Principal</span>
-            <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-8 tracking-tight">A discipline of delivery.</h2>
+            <span class="text-xs uppercase tracking-[0.2em] text-gray-500 dark:text-zinc-500 font-bold mb-4 block">About</span>
+            <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-8 tracking-tight">Patrik Mihaljevic</h2>
             <div class="prose prose-gray dark:prose-invert prose-lg text-gray-600 dark:text-zinc-400 space-y-6">
               <p>
-                9th Hour is run by a senior software engineer with a career built on responsibility. I have seen how quickly software can become a burden when it lacks a steady hand.
+                9th Hour is run by Patrik Mihaljevic, a senior fullstack engineer with 7+ years of experience building and maintaining B2B software across modern web stacks — backend, frontend, infrastructure, and deployment.
               </p>
               <p>
-                I value quiet competence, long-term thinking, and the relief that comes from a well-ordered system. I don't believe in "moving fast and breaking things"—I believe in moving steadily so that things stay fixed.
+                I've led teams, rescued stalled deliveries, and maintained products serving real users and real revenue. I adapt to your existing technology, not the other way around.
+              </p>
+              <p>
+                I work remotely from Croatia (CET) and embed fully into your team's workflow.
               </p>
             </div>
           </div>
@@ -313,13 +483,18 @@ import { Clock9, ArrowRight, Shield, Target, Zap, Users, CheckCircle2, XCircle, 
       <div class="max-w-4xl mx-auto text-center">
         <h2 class="reveal text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-8 tracking-tighter">Start a conversation.</h2>
         <p class="reveal stagger-2 text-xl text-gray-600 dark:text-zinc-400 mb-12 max-w-2xl mx-auto leading-relaxed">
-          If your product development no longer feels under your control, let's discuss the current state of your project. No sales pitch, just a professional evaluation of whether I can help you regain your momentum.
+          Tell me what's stuck. I'll give you an honest assessment of whether I can help — and if I can't, I'll tell you that too.
         </p>
-        <div class="reveal stagger-3 flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <div class="reveal stagger-3 flex flex-col gap-4 justify-center items-center">
           <button class="bg-gray-900 text-white dark:bg-white dark:text-black px-10 py-4 rounded-full text-lg font-bold hover:bg-black dark:hover:bg-zinc-200 transition-all flex items-center gap-2 group">
-            Inquire about availability <ArrowRight class="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            Describe your situation <ArrowRight class="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </button>
           <p class="text-gray-500 dark:text-zinc-500 text-sm">Typical response within 24 hours.</p>
+        </div>
+        <div class="reveal stagger-4 mt-8">
+          <button data-scroll-to="how-it-works" class="text-gray-500 dark:text-zinc-500 text-sm hover:text-gray-900 dark:hover:text-white transition-colors underline underline-offset-4">
+            Not sure where to start? Start with The Diagnosis.
+          </button>
         </div>
       </div>
     </section>
