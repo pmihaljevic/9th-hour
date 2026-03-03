@@ -8,8 +8,8 @@ interface Props {
 }
 
 const {
-  title = '9th Hour — Senior Engineering for B2B Teams',
-  description = 'A senior engineer who embeds into your team, takes ownership of what\'s broken, and delivers the fix. Code, process, and momentum — in 3 to 6 months.',
+  title = "9th Hour",
+  description = "A senior engineer who embeds into your team, takes ownership of what's broken, and delivers the fix. Code, process, and momentum — in 3 to 6 months.",
 } = Astro.props;
 ---
 
@@ -19,34 +19,40 @@ const {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/9th-hour/favicon.svg" />
     <title>{title}</title>
     <script is:inline>
-      (function() {
-        const stored = localStorage.getItem('theme');
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        if (stored === 'dark' || (!stored && prefersDark)) {
-          document.documentElement.classList.add('dark');
+      (function () {
+        const stored = localStorage.getItem("theme");
+        const prefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)",
+        ).matches;
+        if (stored === "dark" || (!stored && prefersDark)) {
+          document.documentElement.classList.add("dark");
         }
       })();
     </script>
   </head>
-  <body class="min-h-screen bg-white dark:bg-[#0a0a0a] text-gray-900 dark:text-[#e5e5e5] font-sans selection:bg-gray-900 selection:text-white dark:selection:bg-white dark:selection:text-black">
+  <body
+    class="min-h-screen bg-white dark:bg-[#0a0a0a] text-gray-900 dark:text-[#e5e5e5] font-sans selection:bg-gray-900 selection:text-white dark:selection:bg-white dark:selection:text-black"
+  >
     <slot />
     <ContactModal />
     <script is:inline>
       // Scroll-triggered reveal animations (shared across all pages)
-      const revealElements = document.querySelectorAll('.reveal, .reveal-subtle');
+      const revealElements = document.querySelectorAll(
+        ".reveal, .reveal-subtle",
+      );
       const revealObserver = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
-              entry.target.classList.add('revealed');
+              entry.target.classList.add("revealed");
               revealObserver.unobserve(entry.target);
             }
           });
         },
-        { threshold: 0.15, rootMargin: '0px 0px -50px 0px' }
+        { threshold: 0.15, rootMargin: "0px 0px -50px 0px" },
       );
       revealElements.forEach((el) => revealObserver.observe(el));
     </script>
