@@ -1,4 +1,6 @@
 ---
+import "../styles/global.css";
+
 interface Props {
   title?: string;
   description?: string;
@@ -30,5 +32,21 @@ const {
   </head>
   <body class="min-h-screen bg-white dark:bg-[#0a0a0a] text-gray-900 dark:text-[#e5e5e5] font-sans selection:bg-gray-900 selection:text-white dark:selection:bg-white dark:selection:text-black">
     <slot />
+    <script is:inline>
+      // Scroll-triggered reveal animations (shared across all pages)
+      const revealElements = document.querySelectorAll('.reveal, .reveal-subtle');
+      const revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('revealed');
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.15, rootMargin: '0px 0px -50px 0px' }
+      );
+      revealElements.forEach((el) => revealObserver.observe(el));
+    </script>
   </body>
 </html>

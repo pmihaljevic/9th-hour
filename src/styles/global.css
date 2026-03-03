@@ -145,4 +145,9 @@ nav[data-scrolled="false"] {
   .group:hover .icon-hover {
     transform: none;
   }
+
+  .animate-ping {
+    animation: none;
+    opacity: 0;
+  }
 }

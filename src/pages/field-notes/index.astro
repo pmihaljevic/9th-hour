@@ -1,0 +1,97 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Nav from "../../components/Nav.astro";
+import Footer from "../../components/Footer.astro";
+import { getCollection } from "astro:content";
+import { ArrowRight } from "@lucide/astro";
+
+const now = new Date();
+const sevenDaysAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
+
+const posts = (await getCollection("field-notes"))
+  .filter((post) => !post.data.draft)
+  .sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf());
+---
+
+<Layout
+  title="Field Notes — 9th Hour"
+  description="Observations from the field. Client challenges, approaches, and solutions from a senior engineer embedded in B2B teams."
+>
+  <Nav />
+
+  <main>
+    <!-- Header -->
+    <section class="pt-40 pb-16 md:pt-52 md:pb-24 px-6">
+      <div class="max-w-4xl mx-auto">
+        <span
+          class="text-xs uppercase tracking-[0.2em] text-gray-500 dark:text-zinc-500 font-bold mb-4 block"
+        >
+          Field Notes
+        </span>
+        <h1
+          class="hero-title text-4xl md:text-6xl font-bold text-gray-900 dark:text-white tracking-tight mb-6"
+        >
+          Notes from the field.
+        </h1>
+        <p
+          class="hero-subtitle text-xl text-gray-600 dark:text-zinc-400 leading-relaxed max-w-2xl"
+        >
+          Real challenges. Honest approaches. What actually worked.
+        </p>
+      </div>
+    </section>
+
+    <!-- Post List -->
+    <section class="pb-24 md:pb-40 px-6">
+      <div class="max-w-4xl mx-auto space-y-6">
+        {
+          posts.map((post, i) => (
+            <a
+              href={`${import.meta.env.BASE_URL}/field-notes/${post.id}/`}
+              class={`reveal stagger-${Math.min(i + 1, 4)} block group`}
+            >
+              <article class="relative p-8 bg-gray-50 dark:bg-white/5 rounded-xl border border-gray-200 dark:border-white/5 card-hover">
+                {post.data.publishedAt >= sevenDaysAgo && (
+                  <span class="absolute top-4 right-4 flex h-2.5 w-2.5">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-gray-900 dark:bg-white opacity-75" />
+                    <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-gray-900 dark:bg-white" />
+                  </span>
+                )}
+                <div class="flex flex-wrap gap-2 mb-4">
+                  {post.data.tags.map((tag: string) => (
+                    <span class="text-xs font-mono uppercase tracking-wider text-gray-400 dark:text-zinc-600">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-gray-700 dark:group-hover:text-zinc-200 transition-colors">
+                  {post.data.title}
+                </h2>
+                <p class="text-gray-600 dark:text-zinc-400 mb-4 leading-relaxed">
+                  {post.data.description}
+                </p>
+                <div class="flex items-center justify-between">
+                  <time
+                    class="text-sm text-gray-400 dark:text-zinc-600"
+                    datetime={post.data.publishedAt.toISOString()}
+                  >
+                    {post.data.publishedAt.toLocaleDateString("en-US", {
+                      year: "numeric",
+                      month: "long",
+                      day: "numeric",
+                    })}
+                  </time>
+                  <span class="text-sm font-semibold text-gray-900 dark:text-white flex items-center gap-2 group-hover:gap-3 transition-all">
+                    Read <ArrowRight class="w-4 h-4" />
+                  </span>
+                </div>
+              </article>
+            </a>
+          ))
+        }
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
