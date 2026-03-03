@@ -124,6 +124,46 @@ nav[data-scrolled="false"] {
 }
 
 /* ========================================
+   MODAL ANIMATIONS
+   ======================================== */
+
+@keyframes modalOverlayIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes modalPanelIn {
+  from { opacity: 0; transform: scale(0.95) translateY(10px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@keyframes modalOverlayOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes modalPanelOut {
+  from { opacity: 1; transform: scale(1) translateY(0); }
+  to { opacity: 0; transform: scale(0.95) translateY(10px); }
+}
+
+#contact-modal.modal-open #contact-modal-backdrop {
+  animation: modalOverlayIn 200ms ease-out forwards;
+}
+
+#contact-modal.modal-open #contact-modal-panel {
+  animation: modalPanelIn 300ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+#contact-modal.modal-closing #contact-modal-backdrop {
+  animation: modalOverlayOut 150ms ease-in forwards;
+}
+
+#contact-modal.modal-closing #contact-modal-panel {
+  animation: modalPanelOut 150ms ease-in forwards;
+}
+
+/* ========================================
    REDUCED MOTION
    ======================================== */
 
@@ -149,5 +189,12 @@ nav[data-scrolled="false"] {
   .animate-ping {
     animation: none;
     opacity: 0;
+  }
+
+  #contact-modal.modal-open #contact-modal-backdrop,
+  #contact-modal.modal-open #contact-modal-panel,
+  #contact-modal.modal-closing #contact-modal-backdrop,
+  #contact-modal.modal-closing #contact-modal-panel {
+    animation: none;
   }
 }
