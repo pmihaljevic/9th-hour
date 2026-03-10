@@ -7,7 +7,6 @@ interface Props {
 }
 
 const { isHome = false } = Astro.props;
-const base = import.meta.env.BASE_URL;
 
 const now = new Date();
 const sevenDaysAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
@@ -36,7 +35,7 @@ const hasRecentPost = posts.some(
           </span>
         </div>
       ) : (
-        <a href={base} class="flex items-center gap-2">
+        <a href="/" class="flex items-center gap-2">
           <div class="w-8 h-8 bg-gray-900 dark:bg-white flex items-center justify-center rounded-xs">
             <Clock9 class="text-white dark:text-black w-5 h-5" />
           </div>
@@ -80,25 +79,25 @@ const hasRecentPost = posts.some(
         ) : (
           <>
             <a
-              href={`${base}#problem`}
+              href={`/#problem`}
               class="text-sm font-medium text-gray-600 hover:text-gray-900 dark:text-zinc-400 dark:hover:text-white transition-colors"
             >
               The Problem
             </a>
             <a
-              href={`${base}#engagement`}
+              href={`/#engagement`}
               class="text-sm font-medium text-gray-600 hover:text-gray-900 dark:text-zinc-400 dark:hover:text-white transition-colors"
             >
               How I Work
             </a>
             <a
-              href={`${base}#process`}
+              href={`/#process`}
               class="text-sm font-medium text-gray-600 hover:text-gray-900 dark:text-zinc-400 dark:hover:text-white transition-colors"
             >
               Process
             </a>
             <a
-              href={`${base}#about`}
+              href={`/#about`}
               class="text-sm font-medium text-gray-600 hover:text-gray-900 dark:text-zinc-400 dark:hover:text-white transition-colors"
             >
               About
@@ -107,7 +106,7 @@ const hasRecentPost = posts.some(
         )
       }
       <a
-        href={`${base}/field-notes/`}
+        href={`/field-notes/`}
         class="relative text-sm font-medium text-gray-600 hover:text-gray-900 dark:text-zinc-400 dark:hover:text-white transition-colors"
       >
         Field Notes
@@ -138,7 +137,7 @@ const hasRecentPost = posts.some(
           </button>
         ) : (
           <a
-            href={`${base}#cta`}
+            href={`/#cta`}
             class="bg-gray-900 text-white dark:bg-zinc-100 dark:text-black px-5 py-2 rounded-full text-sm font-semibold hover:bg-black dark:hover:bg-white transition-all"
           >
             Inquire
@@ -180,22 +179,22 @@ const hasRecentPost = posts.some(
         </>
       ) : (
         <>
-          <a href={`${base}#problem`} class="font-light">
+          <a href={`/#problem`} class="font-light">
             The Problem
           </a>
-          <a href={`${base}#engagement`} class="font-light">
+          <a href={`/#engagement`} class="font-light">
             How I Work
           </a>
-          <a href={`${base}#process`} class="font-light">
+          <a href={`/#process`} class="font-light">
             Process
           </a>
-          <a href={`${base}#about`} class="font-light">
+          <a href={`/#about`} class="font-light">
             About
           </a>
         </>
       )
     }
-    <a href={`${base}/field-notes/`} class="relative font-light">
+    <a href={`/field-notes/`} class="relative font-light">
       Field Notes
       {
         hasRecentPost && (
@@ -224,7 +223,7 @@ const hasRecentPost = posts.some(
         </button>
       ) : (
         <a
-          href={`${base}#cta`}
+          href={`/#cta`}
           class="bg-gray-900 text-white dark:bg-white dark:text-black px-8 py-3 rounded-full text-lg font-bold"
         >
           Inquire
