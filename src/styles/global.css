@@ -1,200 +1,143 @@
 @import "tailwindcss";
-@plugin "@tailwindcss/typography";
 
-/* Enable class-based dark mode for Tailwind v4 */
-@variant dark (&:where(.dark, .dark *));
+@import "@fontsource-variable/inter/index.css";
+@import "@fontsource-variable/newsreader/index.css";
+@import "@fontsource-variable/newsreader/wght-italic.css";
 
-/* Smooth theme transitions */
-html,
-body,
-nav,
-section,
-div,
-button,
-a,
-p,
-h1,
-h2,
-h3,
-span,
-li,
-ul {
-  transition: background-color 300ms ease, color 300ms ease, border-color 300ms ease;
+/* ============================================================
+   9th Hour — v3 design tokens (from Paper: "9th Hour — v3")
+   ============================================================ */
+@theme {
+  --font-sans: "Inter Variable", Inter, system-ui, sans-serif;
+  --font-serif: "Newsreader Variable", Newsreader, Georgia, serif;
+
+  /* Light grounds */
+  --color-cream: #f3f0e8;
+  --color-paper: #f5f2ea;
+  --color-sand: #e9e5dc;
+  --color-line: #d7d2c8;
+
+  /* Ink */
+  --color-ink: #181816;
+  --color-ink-deep: #1d1d1a;
+  --color-line-dark: #3a3a35;
+
+  /* Text */
+  --color-muted: #62615b;
+  --color-muted-dark: #b5b2a8;
+  --color-placeholder: #8e8a81;
+
+  /* Accent */
+  --color-rust: #a65332;
+
+  /* Symposia (sage scene) */
+  --color-sage: #dde3d5;
+  --color-sage-ink: #3e4a38;
+  --color-sage-line: #b8c0ae;
+  --color-sage-body: #4a4a44;
 }
 
-@keyframes fadeZoomIn {
-  from { opacity: 0; transform: scale(0.95); }
-  to { opacity: 1; transform: scale(1); }
-}
-.mobile-menu-enter {
-  animation: fadeZoomIn 200ms ease-out forwards;
-}
-
-nav[data-scrolled="true"] {
-  @apply bg-white/90 dark:bg-[#0a0a0a]/90 backdrop-blur-md border-b border-gray-200 dark:border-white/5 py-4;
-}
-nav[data-scrolled="false"] {
-  @apply bg-transparent py-6;
+/* The v3 canvas is 1440px wide. Every band is full-bleed; its content is not. */
+@utility shell {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 1440px;
 }
 
-/* ========================================
-   REVEAL ANIMATIONS
-   ======================================== */
+html {
+  scroll-behavior: smooth;
+  background-color: var(--color-cream);
+}
 
+body {
+  font-synthesis: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: var(--color-ink);
+  color: var(--color-paper);
+}
+
+/* ============================================================
+   Reveal on scroll
+   ============================================================ */
 @keyframes fadeUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(16px);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: none;
   }
 }
 
-@keyframes fadeUpSubtle {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Base state - hidden until revealed */
 .reveal {
   opacity: 0;
 }
 
 .reveal.revealed {
-  animation: fadeUp 600ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation: fadeUp 700ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
-.reveal-subtle.revealed {
-  animation: fadeUpSubtle 500ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+/* ============================================================
+   Modals
+   ============================================================ */
+@keyframes overlayIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
-/* Stagger delays */
-.stagger-1 { animation-delay: 0ms; }
-.stagger-2 { animation-delay: 100ms; }
-.stagger-3 { animation-delay: 200ms; }
-.stagger-4 { animation-delay: 300ms; }
-
-/* Hero entrance - plays immediately on load */
-.hero-title {
-  animation: fadeUp 800ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
-  animation-delay: 100ms;
-  opacity: 0;
-}
-
-.hero-subtitle {
-  animation: fadeUp 800ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
-  animation-delay: 300ms;
-  opacity: 0;
-}
-
-.hero-cta {
-  animation: fadeUp 800ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
-  animation-delay: 500ms;
-  opacity: 0;
-}
-
-/* ========================================
-   HOVER MICRO-INTERACTIONS
-   ======================================== */
-
-.card-hover {
-  transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1),
-              box-shadow 300ms ease-out;
-}
-
-.card-hover:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 40px -12px rgba(0, 0, 0, 0.4);
-}
-
-.icon-hover {
-  transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.group:hover .icon-hover {
-  transform: rotate(-3deg) scale(1.05);
-}
-
-/* ========================================
-   MODAL ANIMATIONS
-   ======================================== */
-
-@keyframes modalOverlayIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes modalPanelIn {
-  from { opacity: 0; transform: scale(0.95) translateY(10px); }
-  to { opacity: 1; transform: scale(1) translateY(0); }
-}
-
-@keyframes modalOverlayOut {
-  from { opacity: 1; }
-  to { opacity: 0; }
-}
-
-@keyframes modalPanelOut {
-  from { opacity: 1; transform: scale(1) translateY(0); }
-  to { opacity: 0; transform: scale(0.95) translateY(10px); }
-}
-
-#contact-modal.modal-open #contact-modal-backdrop {
-  animation: modalOverlayIn 200ms ease-out forwards;
-}
-
-#contact-modal.modal-open #contact-modal-panel {
-  animation: modalPanelIn 300ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
-}
-
-#contact-modal.modal-closing #contact-modal-backdrop {
-  animation: modalOverlayOut 150ms ease-in forwards;
-}
-
-#contact-modal.modal-closing #contact-modal-panel {
-  animation: modalPanelOut 150ms ease-in forwards;
-}
-
-/* ========================================
-   REDUCED MOTION
-   ======================================== */
-
-@media (prefers-reduced-motion: reduce) {
-  .reveal,
-  .reveal-subtle,
-  .hero-title,
-  .hero-subtitle,
-  .hero-cta {
-    animation: none;
+@keyframes panelIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.985);
+  }
+  to {
     opacity: 1;
     transform: none;
   }
+}
 
-  .card-hover:hover {
-    transform: none;
+.modal[data-state="open"] .modal-backdrop {
+  animation: overlayIn 180ms ease-out forwards;
+}
+
+.modal[data-state="open"] .modal-panel {
+  animation: panelIn 260ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.modal[data-state="closing"] .modal-backdrop,
+.modal[data-state="closing"] .modal-panel {
+  animation: overlayIn 140ms ease-in reverse forwards;
+}
+
+body.modal-locked {
+  overflow: hidden;
+}
+
+/* ============================================================
+   Reduced motion
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 
-  .group:hover .icon-hover {
-    transform: none;
-  }
-
-  .animate-ping {
+  .reveal,
+  .reveal.revealed {
+    opacity: 1;
     animation: none;
-    opacity: 0;
   }
 
-  #contact-modal.modal-open #contact-modal-backdrop,
-  #contact-modal.modal-open #contact-modal-panel,
-  #contact-modal.modal-closing #contact-modal-backdrop,
-  #contact-modal.modal-closing #contact-modal-panel {
+  .modal[data-state] .modal-backdrop,
+  .modal[data-state] .modal-panel {
     animation: none;
   }
 }
