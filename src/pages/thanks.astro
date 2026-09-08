@@ -1,0 +1,41 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+
+// Where Web3Forms lands people when the form posts without JavaScript.
+// With JS the modal shows this same copy in place and never navigates here.
+---
+
+<Layout
+  title="Message sent — 9th Hour"
+  description="Your message is with Patrik. You'll usually hear back within a day."
+>
+  <Nav />
+
+  <section class="bg-cream">
+    <div
+      class="shell flex flex-col gap-6 px-20 py-45 max-xl:px-10 max-md:py-28 max-sm:px-6"
+    >
+      <div class="text-rust text-[13px]/4 font-medium tracking-[0.14em]">
+        MESSAGE SENT
+      </div>
+      <h1
+        class="text-ink w-215 max-w-full font-serif text-[56px]/15.5 font-medium tracking-[-0.01em] max-sm:text-[36px]/11"
+      >
+        Thanks — it's with me.
+      </h1>
+      <p class="text-muted w-160 max-w-full text-lg/7.5">
+        I read every message myself. You'll usually hear back within a day.
+      </p>
+      <a
+        href="/"
+        class="text-ink pt-2 text-[15px]/4.5 font-medium transition-opacity hover:opacity-60"
+      >
+        &larr; Back to 9th Hour
+      </a>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

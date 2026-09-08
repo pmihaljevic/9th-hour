@@ -1,0 +1,59 @@
+---
+interface Props {
+  label: string;
+  name: string;
+  type?: "text" | "email";
+  placeholder: string;
+  textarea?: boolean;
+  required?: boolean;
+  class?: string;
+}
+
+const {
+  label,
+  name,
+  type = "text",
+  placeholder,
+  textarea = false,
+  required = false,
+  class: className = "",
+} = Astro.props;
+
+const id = `field-${Math.random().toString(36).slice(2, 9)}`;
+---
+
+<div
+  class:list={[
+    "border-line focus-within:border-ink flex flex-col gap-2.5 border-b",
+    textarea ? "pb-24" : "pb-3",
+    className,
+  ]}
+>
+  <label
+    for={id}
+    class="text-muted text-xs/4 font-medium tracking-[0.12em] uppercase"
+  >
+    {label}
+  </label>
+  {
+    textarea ? (
+      <textarea
+        id={id}
+        name={name}
+        rows="2"
+        required={required}
+        placeholder={placeholder}
+        class="text-ink placeholder:text-placeholder field-sizing-content w-150 max-w-full resize-none bg-transparent text-[17px]/7 outline-none"
+      />
+    ) : (
+      <input
+        id={id}
+        name={name}
+        type={type}
+        required={required}
+        placeholder={placeholder}
+        class="text-ink placeholder:text-placeholder w-full bg-transparent text-[17px]/5.5 outline-none"
+      />
+    )
+  }
+</div>

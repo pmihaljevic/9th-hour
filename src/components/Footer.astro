@@ -1,36 +1,56 @@
 ---
-import { Clock9 } from "@lucide/astro";
+import { SITE } from "../config/site";
+
+const columns = [
+  [
+    { label: "Symposia", href: SITE.links.symposia },
+    { label: "About", href: SITE.links.about },
+    { label: "Writing", href: SITE.links.writing },
+  ],
+  [
+    { label: "Email", href: `mailto:${SITE.email}` },
+    { label: "Legal", href: SITE.links.legal },
+    { label: "Privacy", href: SITE.links.privacy },
+  ],
+];
 ---
 
-<footer class="py-12 px-6 border-t border-gray-200 dark:border-white/5">
+<footer class="border-line bg-cream border-t">
   <div
-    class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8"
+    class="shell flex items-start justify-between px-20 py-14 max-xl:px-10 max-md:flex-col max-md:gap-10 max-sm:px-6"
   >
-    <div
-      class="flex items-center gap-2 opacity-50 grayscale hover:grayscale-0 transition-all"
-    >
-      <Clock9 class="w-5 h-5 text-gray-900 dark:text-white" />
-      <span
-        class="text-sm font-semibold text-gray-900 dark:text-white tracking-widest uppercase italic"
-        >9th Hour</span
-      >
+    <div class="flex flex-col gap-2.5">
+      <div class="text-ink text-sm/4.5 font-semibold tracking-[0.14em]">
+        9TH HOUR
+      </div>
+      <div class="text-muted font-serif text-[17px]/5.5 italic">
+        Software that gives people time back.
+      </div>
+      <div class="text-muted text-[13px]/4">
+        Consulting &middot; Custom software &middot; Products
+      </div>
     </div>
-    <p
-      class="text-gray-500 dark:text-zinc-600 text-xs tracking-widest uppercase"
-    >
-      &copy; {new Date().getFullYear()} 9th Hour Studio. No cookies. No tracking.
-    </p>
-    <div
-      class="flex gap-6 text-gray-500 dark:text-zinc-500 text-sm font-medium"
-    >
-      <!-- <span
-        class="cursor-pointer hover:text-gray-900 dark:hover:text-white transition-colors"
-        >LinkedIn</span
-      >
-      <span
-        class="cursor-pointer hover:text-gray-900 dark:hover:text-white transition-colors"
-        >Email</span
-      > -->
+
+    <div class="flex gap-14 max-sm:gap-10">
+      {
+        columns.map((column) => (
+          <div class="flex flex-col gap-2">
+            {column.map((link) => (
+              <a
+                href={link.href}
+                class="text-ink text-sm/4.5 transition-opacity hover:opacity-60"
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="flex flex-col items-end gap-2 max-md:items-start">
+      <div class="text-muted text-[13px]/4">&copy; 2026 9th Hour d.o.o.</div>
+      <div class="text-muted text-[13px]/4">No cookies. No tracking.</div>
     </div>
   </div>
 </footer>
