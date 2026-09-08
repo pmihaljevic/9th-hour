@@ -35,6 +35,9 @@ const modals = [
   },
 ];
 
+// Web3Forms needs an absolute URL, and only uses it for the no-JS POST.
+const thanksUrl = new URL("/thanks", Astro.site).href;
+
 const situations = ["Rescue", "Migration", "Cleanup", "Senior gap", "Not sure"];
 ---
 
@@ -99,7 +102,12 @@ const situations = ["Rescue", "Migration", "Cleanup", "Senior gap", "Not sure"];
               </p>
             </div>
 
-            <form class="contact-form flex flex-col gap-12 max-md:gap-9">
+            <form
+              class="contact-form flex flex-col gap-12 max-md:gap-9"
+              action="https://api.web3forms.com/submit"
+              method="POST"
+              data-fallback-email={SITE.email}
+            >
               <input
                 type="hidden"
                 name="access_key"
@@ -107,6 +115,7 @@ const situations = ["Rescue", "Migration", "Cleanup", "Senior gap", "Not sure"];
               />
               <input type="hidden" name="subject" value={modal.subject} />
               <input type="hidden" name="from_name" value="9th Hour website" />
+              <input type="hidden" name="redirect" value={thanksUrl} />
               <input
                 type="checkbox"
                 name="botcheck"
@@ -369,8 +378,7 @@ const situations = ["Rescue", "Migration", "Cleanup", "Senior gap", "Not sure"];
         } catch {
           button.disabled = false;
           label.textContent = original;
-          note.textContent =
-            "That didn't send. Email hello@9th-hour.studio and I'll pick it up there.";
+          note.textContent = `That didn't send. Email ${form.dataset.fallbackEmail} and I'll pick it up there.`;
           note.classList.add("text-rust");
         }
       });
